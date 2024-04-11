@@ -4,6 +4,8 @@ Projeto desenvolvido como parte do Exercício 9 do Curso de Programação Orient
 
 Este projeto consiste em um sistema de gerenciamento de contatos, onde os usuários podem adicionar, pesquisar, listar, remover e atualizar contatos. O sistema utiliza uma interface `SistemaContato` e uma classe `SistemaContatoImpl` que implementa essa interface.
 
+![Diagram](https://github.com/Abraaog/SistemaContato/assets/94805151/675e9e30-2bd2-452d-bf38-e1f37b64300a)
+
 ## Funcionalidades Implementadas:
 
 1. **Adicionar Contato:** Permite adicionar um novo contato ao sistema.
