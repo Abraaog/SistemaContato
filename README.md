@@ -9,7 +9,7 @@ Este projeto consiste em um sistema de gerenciamento de contatos, onde os usuár
 
 ## Funcionalidades Implementadas:
 
-1. Adicionar um novo contato.
+**1.** Adicionar um novo contato.
 2. Pesquisar um contato pelo nome.
 3. Pesquisar um contato pelo número de telefone.
 4. Listar todos os contatos cadastrados.
