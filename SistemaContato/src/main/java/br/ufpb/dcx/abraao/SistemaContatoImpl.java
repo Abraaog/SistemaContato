@@ -31,11 +31,13 @@ public class SistemaContatoImpl implements SistemaContato {
         return null;
     }
 
-    @Override
+
+
     public ArrayList<Contato> listarContatos() {
-        ArrayList<Contato> listaContatos = new ArrayList<>(contatos.values());
-        listaContatos.sort((contato1, contato2) -> contato1.getNome().compareTo(contato2.getNome()));
-        return listaContatos;
+        if (contatos == null) {
+            contatos = new HashMap<>(); // Inicializa a lista de contatos se estiver nula
+        }
+        return new ArrayList<>(contatos.values());
     }
 
 
@@ -61,5 +63,9 @@ public class SistemaContatoImpl implements SistemaContato {
     public int contarContatos() {
         return contatos.size();
     }
-}
+
+    @Override
+    public ArrayList<Contato> getContatos() {
+        return new ArrayList<>(contatos.values());
+    }}
 

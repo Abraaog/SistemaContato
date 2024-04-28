@@ -10,5 +10,8 @@ public interface SistemaContato {
     void removerContatoPorTelefone(String telefone);
     void atualizarTelefone(String nome, String novoTelefone);
     int contarContatos();
+
+
+    ArrayList<Contato> getContatos();
 }
 
