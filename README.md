@@ -16,6 +16,9 @@ Este projeto consiste em um sistema de gerenciamento de contatos, onde os usuár
 6. **Remover Contato por Telefone:** Permite remover um contato pelo número de telefone.
 7. **Atualizar Telefone do Contato:** Permite atualizar o número de telefone de um contato.
 8. **Contar Contatos:** Retorna o número total de contatos cadastrados no sistema.
+![Captura de tela 2024-10-18 192755](https://github.com/user-attachments/assets/fe3d2ad2-0ab3-4b62-9d00-1a41eadc3653)
+![Captura de tela 2024-10-18 193041 png yan ](https://github.com/user-attachments/assets/0dfb1539-2d06-4057-abc1-b644b895bb26)
+![Captura de tela 2024-10-18 193450 pngdsfsdf](https://github.com/user-attachments/assets/f62da547-7b2b-4090-99b4-822c2cced3bc)
 
 ## Funcionalidades Futuras:
 
@@ -29,6 +32,6 @@ Este projeto consiste em um sistema de gerenciamento de contatos, onde os usuár
 8. **Melhoria de Performance:** Otimizar o desempenho do sistema para lidar com grandes volumes de contatos.
 9. **Autenticação e Controle de Acesso:** Implementar autenticação de usuários e controle de acesso para diferentes perfis.
 10. **Notificações:** Adicionar funcionalidades de notificação, como lembretes de aniversário ou eventos.
-![Captura de tela 2024-10-18 192755](https://github.com/user-attachments/assets/fe3d2ad2-0ab3-4b62-9d00-1a41eadc3653)
+
 
 Fique à vontade para contribuir com novas ideias ou colaborações para o projeto!
