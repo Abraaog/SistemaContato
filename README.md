@@ -25,6 +25,11 @@ JMenu contatosMenu
 ![Captura de tela 2024-10-18 193041 png yan ](https://github.com/user-attachments/assets/0dfb1539-2d06-4057-abc1-b644b895bb26)
 ![Captura de tela 2024-10-18 193450 pngdsfsdf](https://github.com/user-attachments/assets/f62da547-7b2b-4090-99b4-822c2cced3bc)
 
+Listando Contato 
+
+![Captura de tela 2024-10-18 204147 png  listando contato ](https://github.com/user-attachments/assets/1890d98f-d5bf-4322-8b65-b18dc83e217f)
+
+
 ## Funcionalidades Futuras:
 
 1. **Edição de Informações de Contato:** Possibilitar a edição de todas as informações de um contato.
