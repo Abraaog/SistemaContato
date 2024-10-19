@@ -29,5 +29,6 @@ Este projeto consiste em um sistema de gerenciamento de contatos, onde os usuár
 8. **Melhoria de Performance:** Otimizar o desempenho do sistema para lidar com grandes volumes de contatos.
 9. **Autenticação e Controle de Acesso:** Implementar autenticação de usuários e controle de acesso para diferentes perfis.
 10. **Notificações:** Adicionar funcionalidades de notificação, como lembretes de aniversário ou eventos.
+![Captura de tela 2024-10-18 192755](https://github.com/user-attachments/assets/fe3d2ad2-0ab3-4b62-9d00-1a41eadc3653)
 
 Fique à vontade para contribuir com novas ideias ou colaborações para o projeto!
