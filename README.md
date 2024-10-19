@@ -1,6 +1,6 @@
 # Sistema de Contatos
 
-Projeto desenvolvido como parte do Exercício 11 do Curso de Programação Orientada a Objetos, por Abraão Gomes da Silva Araújo, aline jesuino, yan.
+Projeto desenvolvido como parte do Exercício 11 do Curso de Programação Orientada a Objetos, por Abraão Gomes da Silva Araújo, Aline jesuino, Yan dos Santos .T. Araujo .
 
 Este projeto consiste em um sistema de gerenciamento de contatos, onde os usuários podem adicionar, pesquisar, listar, remover e atualizar contatos. O sistema utiliza uma interface `SistemaContato` e uma classe `SistemaContatoImpl` que implementa essa interface.
 
