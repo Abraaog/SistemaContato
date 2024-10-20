@@ -1,7 +1,6 @@
 package br.ufpb.dcx.abraao.contato;
 
 import br.ufpb.dcx.abraao.endereco.Endereco;
-
 import java.util.regex.Pattern;
 
 public class Contato {
@@ -68,7 +67,7 @@ public class Contato {
             throw new IllegalArgumentException("Email inválido");
         }
     }
-    
+
     private boolean isValidEmail(String email) {
         // Regex para validação de email
         String emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
@@ -82,5 +81,12 @@ public class Contato {
 
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
+    }
+
+    // Método de validação do telefone
+    public boolean isValidTelefone(String telefone) {
+        String telefoneRegex = "^\\(?(\\d{2})\\)? ?9?\\d{4}-?\\d{4}$"; // Exemplo de validação (XX) 9XXXX-XXXX
+        Pattern pattern = Pattern.compile(telefoneRegex);
+        return telefone != null && pattern.matcher(telefone).matches();
     }
 }
