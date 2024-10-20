@@ -1,13 +1,9 @@
 package br.ufpb.dcx.abraao.sistema;
 
 import br.ufpb.dcx.abraao.contato.Contato;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class SistemaContatoImpl implements SistemaContato {
@@ -32,23 +28,33 @@ public class SistemaContatoImpl implements SistemaContato {
         }
     }
 
+  
     @Override
     public void adicionarContato(Contato contato) {
         validarDados(contato);
         if (contatos.containsKey(contato.getNome())) {
-            throw new IllegalArgumentException("Contato já existe com o nome " + contato.getNome());
+            throw new IllegalArgumentException("Já existe um contato com esse nome.");
         }
         contatos.put(contato.getNome(), contato);
-    }
+    }  
 
+
+    public class ContatoNaoEncontradoException extends RuntimeException {
+        public ContatoNaoEncontradoException(String mensagem) {
+            super(mensagem);
+        }
+    }
+    
     @Override
     public Contato pesquisarContatoPorNome(String nome) {
         Contato contato = contatos.get(nome);
         if (contato == null) {
-            throw new IllegalArgumentException("Contato com o nome " + nome + " não encontrado.");
+            throw new ContatoNaoEncontradoException("Contato não encontrado: " + nome);
         }
         return contato;
     }
+
+
 
     @Override
     public Contato pesquisarContatoPorTelefone(String telefone) {
@@ -57,36 +63,33 @@ public class SistemaContatoImpl implements SistemaContato {
                 return contato;
             }
         }
-        throw new IllegalArgumentException("Contato com o telefone " + telefone + " não encontrado.");
+        return null;
     }
 
+
+
     @Override
-    public List<Contato> listarContatos() {
+    public ArrayList<Contato> listarContatos() {
         return new ArrayList<>(contatos.values());
     }
 
+
     @Override
     public void removerContatoPorNome(String nome) {
-        if (contatos.remove(nome) == null) {
-            throw new IllegalArgumentException("Contato com o nome " + nome + " não encontrado.");
-        }
+        contatos.remove(nome);
     }
 
     @Override
     public void removerContatoPorTelefone(String telefone) {
-        boolean removed = contatos.values().removeIf(contato -> contato.getTelefone().equals(telefone));
-        if (!removed) {
-            throw new IllegalArgumentException("Contato com o telefone " + telefone + " não encontrado.");
-        }
+        contatos.values().removeIf(contato -> contato.getTelefone().equals(telefone));
     }
 
     @Override
     public void atualizarTelefone(String nome, String novoTelefone) {
         Contato contato = contatos.get(nome);
-        if (contato == null) {
-            throw new IllegalArgumentException("Contato com o nome " + nome + " não encontrado.");
+        if (contato != null) {
+            contato.setTelefone(novoTelefone);
         }
-        contato.setTelefone(novoTelefone);
     }
 
     @Override
@@ -95,36 +98,7 @@ public class SistemaContatoImpl implements SistemaContato {
     }
 
     @Override
-    public List<Contato> getContatos() {
+    public ArrayList<Contato> getContatos() {
         return new ArrayList<>(contatos.values());
-    }
+    }}
 
-    @Override
-    public void exportarContatos(String caminhoArquivo) throws IOException {
-        try (FileWriter writer = new FileWriter(caminhoArquivo)) {
-            for (Contato contato : contatos.values()) {
-                writer.write(contato.getNome() + "," + contato.getSobrenome() + "," +
-                    contato.getTelefone() + "," + contato.getEmail() + "," +
-                    (contato.getEndereco() != null ? contato.getEndereco().getLogradouro() + ", " + contato.getEndereco().getNumero() : "Sem Endereço") + "\n");
-            }
-        }
-    }
-
-    @Override
-    public void importarContatos(String caminhoArquivo) throws IOException {
-        try (BufferedReader reader = new BufferedReader(new FileReader(caminhoArquivo))) {
-            String linha;
-            while ((linha = reader.readLine()) != null) {
-                String[] dados = linha.split(",");
-                if (dados.length >= 4) { // Considera que o endereço pode ser opcional
-                    String nome = dados[0];
-                    String sobrenome = dados[1];
-                    String telefone = dados[2];
-                    String email = dados[3];
-                    Contato contato = new Contato(nome, sobrenome, telefone, email, null);
-                    adicionarContato(contato);
-                }
-            }
-        }
-    }
-}

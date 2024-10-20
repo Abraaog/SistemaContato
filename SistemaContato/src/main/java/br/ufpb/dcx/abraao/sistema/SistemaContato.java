@@ -2,7 +2,7 @@ package br.ufpb.dcx.abraao.sistema;
 
 import br.ufpb.dcx.abraao.contato.Contato;
 
-import java.io.IOException;
+
 import java.util.List;
 
 public interface SistemaContato {
@@ -14,7 +14,8 @@ public interface SistemaContato {
     void removerContatoPorTelefone(String telefone);
     void atualizarTelefone(String nome, String novoTelefone); // Mantenha apenas um método para atualizar o telefone
     int contarContatos();
-    void exportarContatos(String caminhoArquivo) throws IOException;
-    void importarContatos(String caminhoArquivo) throws IOException;
+
+
     List<Contato> getContatos();
 }
+
